@@ -19,9 +19,9 @@
       </p>
 
       <h2>Contact Us</h2>
-      <p>Address: 9274 Beurre Ave, Paris, France</p>
-      <p>Phone: +08 88 88 88 88 88</p>
-      <p>Email: hello@cafewithavue.bakery</p>
+      <p>Address: {{contactInfo.address}}</p>
+      <p>Phone: {{ contactInfo.phone}} </p>
+      <p>Email: {{contactInfo.email}}</p>
       <p>Hours:</p>
       <ul>
         <li>M-F: 06:00 to 16:00</li>
@@ -39,7 +39,18 @@
       const app = new Vue({
         el: '#app',
         data: {
-          restaurantName: 'French Bakery'
+          restaurantName: 'Cafe with a Vue',
+          contactInfo: {
+            address: "9274 Beurre Ave, Paris, France",
+            phone: "+08 88 88 88 88 88",
+            email: "hello@cafewithavue.bakery"
+
+          }
+        },
+        computed: {
+          copyright(){
+            return "copyright " + restaurantName  + " 2019"
+          }
         }
       })
     </script>
