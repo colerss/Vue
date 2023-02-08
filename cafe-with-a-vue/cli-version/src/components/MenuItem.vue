@@ -1,7 +1,12 @@
 <script>
 export default {
   name: 'MenuItem',
-  props: ['addToShoppingCart', 'image', 'inStock', 'name', 'price', 'quantity']
+  props: ['addToShoppingCart', 'image', 'inStock', 'name', 'price', 'quantity'],
+  beforeMount(){
+    let today = new Date();
+    if ( today.getDate() % 2=== 0) {
+    this.price = this.price * 0.9
+  }}
 }
 </script>
 
