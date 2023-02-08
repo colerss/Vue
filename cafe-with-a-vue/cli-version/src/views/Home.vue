@@ -13,7 +13,7 @@
       <h2>Menu</h2>
       <MenuItem
         v-for="item in simpleMenu"
-        :addToShoppingCart="addToShoppingCart"
+        @add-to-cart="addToShoppingCart"
         :name="item.name"
         :image="item.image"
         :price="item.price"
@@ -87,8 +87,8 @@ export default {
     }
   },
   methods: {
-    addToShoppingCart(amount) {
-      this.shoppingCart += amount
+    addToShoppingCart(payload) {
+      this.shoppingCart += payload.value
     }
   }
 }

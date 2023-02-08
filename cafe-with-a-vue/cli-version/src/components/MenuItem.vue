@@ -2,10 +2,6 @@
 export default {
   name: 'MenuItem',
   props: {
-    addToShoppingCart: {
-      type: Function,
-      required: true
-    },
     image: {
       type: Object,
       required: true
@@ -46,6 +42,11 @@ export default {
 
     if (today % 2 === 0) {
       this.onSale = true
+    }
+  },
+  methods: {
+    addToShoppingCart(){
+      this.$emit("add-to-cart", {value: this.quantity})
     }
   }
 }
