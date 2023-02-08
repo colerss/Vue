@@ -44,7 +44,7 @@ export default {
   },
   methods: {
     updateShoppingCart(quantity) {
-      this.$emit('add-items-to-cart', quantity)
+      this.$store.dispatch('updateCart', quantity)
     }
   },
   beforeMount() {
