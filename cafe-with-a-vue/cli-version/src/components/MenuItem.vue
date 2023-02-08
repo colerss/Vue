@@ -1,8 +1,17 @@
 <script>
 export default {
-  name: 'MenuItem',
-  props: ['addToShoppingCart', 'image', 'inStock', 'name', 'quantity']
-}
+  name: "MenuItem",
+  props: {
+    addToShoppingCart: { type: Function },
+    image: {
+      type: Object,
+      default: () => ({ source: "", alt: "" }),
+    },
+    inStock: { type: Boolean },
+    name: { type: String, required: true },
+    quantity: { type: Number },
+  },
+};
 </script>
 
 <template>
