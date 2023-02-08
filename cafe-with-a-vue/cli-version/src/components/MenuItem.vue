@@ -26,6 +26,18 @@ export default {
 }
 </script>
 
+<style scoped>
+  .menu-item {
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.menu-item__image {
+  max-width: 300px;
+}
+</style>
 <template>
   <div class="menu-item">
     <img class="menu-item__image" :src="image.source" :alt="image.alt" />

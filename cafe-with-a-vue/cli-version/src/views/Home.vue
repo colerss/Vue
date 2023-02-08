@@ -34,62 +34,89 @@
 </template>
 
 <script>
-import MenuItem from '../components/MenuItem'
+import MenuItem from "../components/MenuItem";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
-    MenuItem
+    MenuItem,
   },
   data() {
     return {
-      restaurantName: 'Cafe with A Vue',
+      restaurantName: "Cafe with A Vue",
       shoppingCart: 0,
       simpleMenu: [
         {
-          name: 'Crossiant',
+          name: "Crossiant",
           image: {
-            source: '/images/crossiant.jpg',
-            alt: 'A crossiant'
+            source: "/images/crossiant.jpg",
+            alt: "A crossiant",
           },
           inStock: true,
           quantity: 1,
-          price: 2.99
+          price: 2.99,
         },
         {
-          name: 'French Baguette',
+          name: "French Baguette",
           image: {
-            source: '/images/french-baguette.jpeg',
-            alt: 'Four French Baguettes'
+            source: "/images/french-baguette.jpeg",
+            alt: "Four French Baguettes",
           },
           inStock: true,
           quantity: 1,
-          price: 3.99
+          price: 3.99,
         },
         {
-          name: 'Éclair',
+          name: "Éclair",
           image: {
-            source: '/images/eclair.jpg',
-            alt: 'Chocolate Éclair'
+            source: "/images/eclair.jpg",
+            alt: "Chocolate Éclair",
           },
           inStock: false,
           quantity: 1,
-          price: 4.99
-        }
-      ]
-    }
+          price: 4.99,
+        },
+      ],
+    };
   },
   computed: {
     copyright() {
-      const currentYear = new Date().getFullYear()
+      const currentYear = new Date().getFullYear();
 
-      return `Copyright ${this.restaurantName} ${currentYear}`
-    }
+      return `Copyright ${this.restaurantName} ${currentYear}`;
+    },
   },
   methods: {
     addToShoppingCart(amount) {
-      this.shoppingCart += amount
-    }
-  }
-}
+      this.shoppingCart += amount;
+    },
+  },
+};
 </script>
+
+<style scoped>
+
+.footer {
+  text-align: center;
+  font-style: italic;
+}
+.shopping-cart {
+  position: absolute;
+  right: 30px;
+  top: 0;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  max-width: 960px;
+  font-size: 1.2rem;
+  margin: 0 auto;
+}
+
+</style>
